@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기본문법</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background: #fcc;
+        }
+    </style>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        //jQuery(document).ready(function () { //first way
+        //$(document).ready(function () { //second way //***Most prefered way
+        //jQuery(function () {
+        $(function () {
+            jQuery(function () {
+                $("#box").on('click', function () {
+                $(this).css("backgroundColor", "#cff")
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box"><h1>클릭할게요</h1></div>
+
+<!--    <script>-->
+<!--        $("#box").on('click', function () {-->
+<!--            $(this).css("backgroundColor", "#cff")-->
+<!--        });-->
+<!--    </script>-->
+
+    <!--        //js code below-->
+<!--    <script>-->
+<!--        var ele = document.getElementById("box");-->
+<!--        var ele2 = document.getElementsByTagName("h1");-->
+<!--        ele.onclick = function () {-->
+<!--            ele.style.background = "#aff"-->
+<!--            ele2.style.fontSizeAdjust = "100px";-->
+<!--        };-->
+<!--    </script>-->
+
+</body>
+</html>

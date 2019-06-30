@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1" class="div2">
+        <img src="images/car1.jpg" alt="자동차">
+    </div>
+    <script>
+        var div = document.getElementById('div1');
+        console.log(div.getAttribute("id"));
+        console.log(div.getAttribute("class"));
+
+        var img = div.getElementsByTagName('img');
+        alert( img[0].getAttribute('src') );
+
+    </script>
+
+</body>
+</html>

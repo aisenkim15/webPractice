@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event3</title>
+</head>
+<body>
+    <p id="p">마우스 올리면 배경색 변경 방법2</p>
+    <script>
+        var p = document.querySelector("#p");
+        //p.onmouseover = changeBg1;
+        //p.onmouseout = changeBg2;
+        p.addEventListener('mouseover', changeBg1);
+        p.addEventListener('mouseout', changeBg2);
+
+        function changeBg1() {
+        p.style.backgroundColor = "orange";
+        }
+
+        function changeBg2() {
+        p.style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>

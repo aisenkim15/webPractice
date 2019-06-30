@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>선호하는 음식</h1>
+        <div id="food_1">
+            <h2 id="title">한식</h2>
+            <ol>
+                <li><a href="#">김치</a></li>
+                <li>불고기</li>
+                <li>비빔밥</li>
+            </ol>
+        </div>
+        <div id="food_2">
+            <h2>양식</h2>
+            <ol id="list">
+                <li>돈까스</li>
+                <li id="pizza">피자</li>
+                <li>파스타</li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        var divRoot = document.getElementById('wrap');
+        console.log(divRoot);
+        //var heading1 = divRoot.firstChild; //if you do this, it grabs the blank space
+
+        //heading1.nextSibling.style.background = "red"; //have to do this to get what we want
+        var heading = divRoot.children[0];
+        heading.style.background = 'red';
+
+        var divRoot2 = document.getElementById('food_1');
+        var heading2 = divRoot2.children[0];
+        heading2.style.color = 'red';
+
+        var kimchi = divRoot2.children[1].children[0];
+        console.log(kimchi);
+        kimchi.nextSibling.nextSibling.style.color = "pink";
+        console.log(kimchi.nextSibling.nextSibling);
+
+    </script>
+</body>
+</html>

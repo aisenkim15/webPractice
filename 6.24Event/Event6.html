@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {display:block; padding:20px; border: 5px solid #000;}
+    </style>
+    <script>
+        function btnEvent1(obj) {
+            obj.style.borderColor = 'pink';
+        }
+        function btnEvent2(obj) {
+            obj.style.borderColor = 'orange';
+        }
+        function btnEvent3(obj) {
+            obj.style.fontStyle = "italic";
+        }
+        function btnEvent4(obj) {
+            obj.style.fontStyle = "normal";
+        }
+    </script>
+</head>
+<body>
+    <button onmouseover="btnEvent1(this)"
+            onmouseout="btnEvent2(this)"
+            onmousedown="btnEvent3(this)"
+            onmouseup="btnEvent4(this)"
+    >이벤트1</button>
+
+
+</body>
+</html>

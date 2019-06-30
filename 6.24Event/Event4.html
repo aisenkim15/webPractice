@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event4 'when using script in head (same as Event3.html)</title>
+
+    <script>
+        /*function init() {
+            var p = document.querySelector("#p");
+            //p.onmouseover = changeBg1;
+            //p.onmouseout = changeBg2;
+            p.addEventListener('mouseover', changeBg1);
+            p.addEventListener('mouseout', changeBg2);
+        }*/
+        var p;
+        window.onload = function () {
+            p = document.querySelector("#p");
+            //p.onmouseover = changeBg1;
+            //p.onmouseout = changeBg2;
+            p.addEventListener('mouseover', changeBg1);
+            p.addEventListener('mouseout', changeBg2);
+        }
+
+        function changeBg1() {
+            p.style.backgroundColor = "orange";
+        }
+
+        function changeBg2() {
+            p.style.backgroundColor = "red";
+        }
+    </script>
+
+</head>
+<!--use this when not using window abover -->
+<!--<body onload="init();">-->
+<body>
+    <p id="p">마우스 올리면 배경색 변경 방법2</p>
+
+</body>
+</html>

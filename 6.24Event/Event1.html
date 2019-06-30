@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 실행방법</title>
+
+</head>
+<body>
+    <button class="btn1" onclick="btn1()">Press me 1</button>
+    <button class="btn2">Press me 2</button>
+    <button class="btn3">Press me 3</button>
+
+    <script>
+        function btn1(){
+            console.log("It's btn1");
+        }
+
+        var btn2 = document.getElementsByClassName("btn2")[0];
+        btn2.onclick = function(){
+            console.log("It's btn2");
+        }
+
+        var btn3 = document.querySelector('.btn3');
+        btn3.addEventListener('click', btn33);
+        function btn33(){
+            console.log("It's btn3");
+        }
+    </script>
+</body>
+</html>

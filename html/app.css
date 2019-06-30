@@ -1,0 +1,15 @@
+*{
+    background: lightyellow;
+}
+ 
+ul li{
+    text-decoration: line-through;
+}
+
+table {
+    border: 2px black solid;
+}
+
+table thead{
+    border: 2px, black solid;
+}

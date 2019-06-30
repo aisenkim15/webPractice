@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img src="images/car1.jpg" alt="자동차">
+    <a href="#"  id="goNaver">네이버</a>
+    <script>
+        var img = document.getElementsByTagName('img');
+        img[0].setAttribute("src", "images/car2.jpg");
+
+        var goNaver = document.getElementById('goNaver');
+        goNaver.setAttribute( 'href', 'http://www.naver.com' );
+
+    </script>
+</body>
+</html>

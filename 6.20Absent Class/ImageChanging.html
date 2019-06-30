@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayMethods</title>
+    <script>
+        var num = 1;
+        var timing = setInterval(function () {
+            num++;
+            var hand = document.getElementsByTagName('img')[0];
+            console.log(hand);
+            hand.setAttribute("src", "images/pic" + "num" + ".jpg");
+            if (num == 3) {
+                num = 0;
+            }
+        }, 500);
+    </script>
+</head>
+<body>
+    <img src="../images/pic1.jpg" alt="hand1" width="200" height="200">
+
+</body>
+</html>

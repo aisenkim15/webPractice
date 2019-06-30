@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 로딩</title>
+    <script>
+        var files = ["images2/Penguins.png",
+            "images2/Lighthouse.png",
+            "images2/Chrysanthemum.png",
+            "images2/Desert.png",
+            "images2/Hydrangeas.png",
+            "images2/Jellyfish.png",
+            "images2/Koala.png",
+            "images2/Tulips.png"];
+        var imgs = new Array();
+        console.log(imgs);
+        for (var i = 0; i < files.length; i++) {
+            imgs[i] = new Image();
+            imgs[i].src = files[i];
+            console.log(imgs[i]);
+        }
+        var num =1;
+        function changeImg(obj) {
+            obj.src = imgs[num].src;
+            num++;
+            if (num == files.length) {
+                num=0;
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="images2/Penguins.png" onclick="changeImg(this)" id="img" alt width="300">
+</body>
+</html>

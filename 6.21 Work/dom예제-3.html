@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" method="get" name="f1">
+    <fieldset>
+        <legend>폼 요소1</legend>
+
+        <label for="user_pw1">비밀번호</label>
+        <input type="password" name="user_pw" id="user_pw1">
+        <br>
+        <label for="user_pw2">비밀번호</label>
+        <input type="text" name="user_pw2" id="user_pw2">
+
+        <input type="submit" name="btn" value="확인">
+    </fieldset>
+</form>
+
+<form action="#" method="get" name="f2">
+    <fieldset>
+        <legend>폼 요소2</legend>
+        <div id="terms">
+            회사는 법령 회사는 법령 회사는 법령 회사는 법령 회사는 법령 회사는 법령
+            회사는 법령 회사는 법령 회사는 법령 회사는 법령 회사는 법령 회사는 법령
+            회사는 법령 회사는 법령 회사는 법령 회사는 법령 회사는 법령 회사는 법령
+        </div>
+        <br>
+        <input type="checkbox" name="accept" id="accept"/>
+        <label for="accept">약관동의합니다</label>
+        <br><br>
+        <input type="checkbox" name="allChk" id="allChk">
+        <label for="allChk">전체선택</label> <br/>
+
+        <input type="checkbox" name="subject1" id="subject1" value="s1">
+        <label for="subject1">과목1</label> <br/>
+
+        <input type="checkbox" name="subject2" id="subject2" value="s2">
+        <label for="subject2">과목2</label> <br/>
+
+        <input type="checkbox" name="subject3" id="subject3" value="s3">
+        <label for="subject3">과목3</label> <br/>
+
+        <input type="submit" value="등록완료">
+        <input type="reset" value="등록취소">
+
+    </fieldset>
+</form>
+
+<script>
+    //checking all
+    document.f2.allChk.onclick = function () {
+        if (this.checked) {
+            document.f2.subject1.checked = true;
+            document.f2.subject2.checked = true;
+            document.f2.subject3.checked = true;
+        } else {
+            document.f2.subject1.checked = false;
+            document.f2.subject2.checked = false;
+            document.f2.subject3.checked = false;
+
+        }
+    }
+    //두번째 폼요소에 전송버튼 눌렀을떄 샐행
+    document.f2.onsubmit = function () {
+        act = document.f2.accept;
+        if (act.checked === false) {
+            alert("Check 약관동의");
+            act.focus();
+            return false;
+        }
+    };
+
+    //첯번째 폼 요소에 전송버튼 눌렀을때 실행
+    //1. 두개의 비밀번호 값이 일치하는지 여부를 출력
+    /*document.f1.onsubmit = function(){
+        var userPw1 = document.f1.user_pw1;
+        var userPw2 = document.f1.user_pw2;
+        if (userPw1.value === userPw2.value) {
+            alert("Password Math")
+        } else {
+            alert("Password don't Match")
+        }
+    }*/
+
+    //2. 2. 비밀번호 하나를 입력시 그 번호를 출력
+    //1st way
+    /*
+    document.f1.onsubmit = function () {
+        var userPw1 = document.f1.user_pw1;
+        var userPw2 = document.f1.user_pw2;
+        var name = userPw2.setAttribute('type', 'id');
+        userPw2.value = userPw1.value;
+        return false;
+    }
+    */
+
+    //ANswer
+    var btn = document.f1.btn;
+    btn.onclick = function () {
+        var userPw1 = document.f1.user_pw1;
+        var userPw2 = document.f1.user_pw2;
+        userPw2.value = userPw1.value;
+        userPw2.disabled = true;
+        return false;
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Animation</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        span {
+            font-size: 30px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById('box');
+        var cons = "Hello! JavaScript!".toUpperCase();
+        var text = cons.split('');
+        console.log(text);
+        for (var i = 0; i < text.length; i++) {
+            box.innerHTML += "<span>" + text[i] + "</span>";
+        }
+        var span = document.getElementsByTagName('span');
+
+        $("span").on('mouseenter', function () {
+            $(this).animate({fontSize: 40});
+        });
+        $("span").on('mouseleave', function () {
+            $(this).animate({fontSize: 30});
+        });
+
+    </script>
+</body>
+</html>

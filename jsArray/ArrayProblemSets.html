@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Challenge Exercise</title>
+    <script>
+        // Question number 1
+        function printReverse(array){
+            for (var i = array.length-1; i >= 0; i--) {
+                console.log(array[i]);
+            }
+        }
+        printReverse([1, 2, 3, 4]);
+
+        // Question #2
+        function isUniform(array) {
+            var val =false;
+            for (var i = 0; i < array.length-1; i++) {
+                if (array[i] !== array[i + 1]) {
+                    console.log("False");
+                    return;
+                } else {
+                    val = true;
+                }
+            }
+            if (val === true) {
+                console.log(val);
+            }
+        }
+
+        isUniform([1, 1, 1, 1, 1, 2]);
+
+        // problem3
+        function sumArray(array) {
+            var sum=0;
+            array.forEach(function (num) {
+                sum += num;
+            });
+            console.log(sum);
+        }
+
+        sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+        // question 4
+        function max(array) {
+            maxNum = 0;
+            array.forEach(function (num) {
+                if (num > maxNum) {
+                    maxNum = num;
+                }
+            });
+            console.log("The maximum number is: " + maxNum);
+        }
+
+        max([1, 2, 3, 4, 5, 6]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

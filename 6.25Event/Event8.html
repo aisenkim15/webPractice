@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #text {
+            background: beige;
+        }
+        #box2 {
+            width:50px;
+            height: 50px;
+            background: #fcc;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<h2>마우스 움직일때 이벤트 </h2>
+<img src="images2/beach.png" onmousemove="where(event)">
+<div id="box">aa</div>
+<script>
+    var box = document.getElementById("box");
+    var box2 = document.getElementById('box2');
+    var text;
+    function where(e) {
+        text = "screenX: " + e.screenX + ", screenY: " + e.screenY + "<br>";
+        text += "pageX: " + e.pageX + ", pageY: " + e.pageY + "<br>";
+        text += "clientX: " + e.clientX + ", clientY: " + e.clientY + "<br>";
+        text += "offsetX: " + e.offsetX + ", offsetY: " + e.offsetY + "<br>";
+
+        //text = text + "bbb";
+        box.innerHTML = text;
+        box2.style.left = e.offsetX + 30 + "px";
+        box2.style.top = e.offsetY + 70 + "px";
+    }
+</script>
+</body>
+</html>

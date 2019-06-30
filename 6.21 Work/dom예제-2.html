@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 id="title">Mouse Out</h1>
+    <h1> NExt </h1>
+    <a href="#" id="btn">
+        <img src="images/btn_out.gif" alt="Button">
+    </a>
+    <p id="img_src"></p>
+    <script>
+        var heading = document.getElementById('title');
+        var btn = document.getElementById('btn');
+        var imgPath = document.getElementById('img_src');
+
+        console.log(heading);
+        var a = btn.children[0];
+        btn.onmouseover = function(){
+            heading.innerHTML = "Mouse IN";
+            console.log(a);
+            a.setAttribute("src", "images/btn_over.gif");
+            imgPath.innerText = a.getAttribute('src');
+        };
+        btn.onmouseout = function () {
+            heading.innerHTML = "Mouse OUT"
+            a.setAttribute("src", "images/btn_out.gif");
+            imgPath.innerText = a.src;
+        };
+        // btn.onmouseenter = function () {
+        //
+        // };
+    </script>
+</body>
+</html>

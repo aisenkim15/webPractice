@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <ol>
+        <li>HTML</li>
+        <li class="active">CSS</li>
+        <li>JavaScript</li>
+    </ol>
+    <script>
+        var liFirst = document.querySelector('li');
+        liFirst.style.color = "red";
+        var active = document.querySelector('.active');
+        active.style.color = "blue";
+
+        var liAll = document.querySelectorAll('li');
+        console.log(liAll);
+        for ( var i = 0; i < liAll.length; i++ ) {
+            liAll[i].style.background = "#ccc";
+        }
+        liAll[2].style.color = "green";
+
+    </script>
+</body>
+</html>

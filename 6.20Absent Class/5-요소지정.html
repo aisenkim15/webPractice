@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>요소지정</title>
+</head>
+<body>
+    <div id="target"></div>
+    <script>
+        var name = prompt("이름을 입력하시오", "당신은 누구십니까?");
+        alert("Hello, " + name);
+
+        // var target = document.getElementsByTagName('div');
+        // target[0].innerHTML = name;
+
+        // 아이디명으로 출력
+        // var target = document.getElementById('target');
+        // target.innerHTML = name;
+
+        // querySelector -> 아이디명
+        var target = document.querySelector('#target');
+        target.innerHTML = name;
+
+
+    </script>
+</body>
+</html>

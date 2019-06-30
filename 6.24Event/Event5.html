@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating Calculating Page</title>
+    <script>
+        function calc() {
+            var exp = document.querySelector('#exp');
+            var result = document.querySelector('#result');
+            result.value = eval(exp.value);
+
+        }
+    </script>
+</head>
+<body>
+    <p>계산하고자 하는 수식을 입력하고 계산 버튼을 눌려봐요</p>
+    <form>
+        <label for="exp">식</label>
+        <input type="text" id="exp" value=""> <br>
+
+        <label for="result">값</label>
+        <input type="text" id="result"  readonly> <br>
+
+        <input type="button" value="계산" onclick = 'calc()' ondblclick="exp.value=''">
+    </form>
+
+</body>
+</html>

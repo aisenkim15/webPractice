@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>조별 발표 순서 저아기</h1>
+    <ol>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+    </ol>
+    <button onclick="select()">조선택</button>
+    <script>
+        function select() {
+            var i=0;
+            var groupList = ['1조', '2조', '3조', '4조'];
+            var random;
+            var randomVar =4;
+            while (groupList.length > 0) {
+                random = Math.floor((Math.random() * randomVar));
+                var lis = document.getElementsByTagName('li')[i];
+                lis.innerHTML = groupList[random];
+                i++;
+                randomVar--;
+                groupList.splice(random, 1);
+                //have to delete the context inside of it
+            }
+        }
+    </script>
+</body>
+</html>

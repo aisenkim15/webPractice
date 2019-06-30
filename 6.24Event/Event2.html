@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event2</title>
+</head>
+<body>
+    <p onmouseover="changeBg1(this)" onmouseout="changeBg2(this)">마우스 올리면 배경색 변경</p>
+    <script>
+        //var p = document.getElementsByTagName('p')[0];
+        function changeBg1(obj) {
+            obj.style.backgroundColor = "orange";
+        }
+
+        function changeBg2(obj) {
+            obj.style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>
