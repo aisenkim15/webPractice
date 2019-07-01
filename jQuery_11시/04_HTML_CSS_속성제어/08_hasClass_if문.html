@@ -14,13 +14,22 @@
 
 	<h1>if 문을 활용한 클래스 변경</h1>
 	<div class="red">만약 class name이 red가 있다면 yellow으로 class를 변경하고 </div>
-	<div>아래의 텍스트 내용을 ClassName is yellow로 변경하라</div>
+	<div>아래의 텍스트 내용을 ClassName is <span id="2nd">yellow</span>로 변경하라</div>
 	<p>ClassName is Red</p>
 
 	<script>
 	
 	// hasClass를 이용하여 본문의 문장처럼 완성하시오
-	
+	$("div").addClass(function () {
+		//$("div).attr("class") == "red" //below is the simplified version of this
+		if ($("div").hasClass("red")) {
+
+			$(this).removeClass().addClass("yellow");
+			$("p").text("ClassName is Yellow");
+			$("#2nd").css("backgroundColor", "yellow");
+		}
+
+	});
 		
 		
 	</script>
