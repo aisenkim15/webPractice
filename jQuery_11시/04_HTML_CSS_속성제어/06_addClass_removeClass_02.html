@@ -27,7 +27,12 @@
 		
 		// 각 이미지 클릭시 클래스명을 랜던하게 추가하고
 		// 동시에 다른 이미지의 클래스명은 삭제하시오
-		
+		$("img").on("click", function () {
+			var n = Math.ceil(Math.random() * 3);
+			$("img").removeClass();
+			$(this).addClass("type"+n);
+
+		})
 		
 		
 		

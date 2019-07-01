@@ -28,7 +28,11 @@
 	<script>
 
 		// toggleClass는 addClass와 removeClass를 번갈아가며 실행
-		
+		$("img").on("click", function () {
+			//$(this).toggleClass("type1");
+			var n = $(this).index()+1;
+			$(this).toggleClass("type" + n);
+		})
 		
 
 	</script>

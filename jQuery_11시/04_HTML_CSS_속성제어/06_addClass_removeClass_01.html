@@ -29,7 +29,11 @@
 	<script>
 
 		// 각 이미지 클릭시 클래스명이 랜덤하게 추가하시오
-		
+		$("img").on("click", function () {
+			var n = Math.ceil(Math.random() * 5);
+
+			$(this).removeClass().addClass("type"+n);
+		})
 		
 		
 		
