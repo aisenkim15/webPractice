@@ -17,24 +17,35 @@
 
 <body>
 
-	<img src="th1.jpg" alt="" />
-	<img src="th2.jpg" alt="" />
-	<img src="th3.jpg" alt="" />
+	<img src="th1.jpg" alt="">
+	<img src="th2.jpg" alt="">
+	<img src="th3.jpg" alt="">
 
 	<!---------- jQuery code Start ---------->
 
 	<script>
 
 		// 각 이미지를 클릭시 클래스 네임 type1, type2, type3 을 적용하시오
+
+		$("img").on("click", function () {
+			var n= $(this).index() +1;
+			console.log(n); //for testing
+			$(this).addClass("type" + n);
+		})
 		
-		
-		
+
+		/* $("img:eq(0)").on("click", function() {
+			$(this).addClass('type1');
+		});
+		$("img:eq(1)").on("click", function() {
+			$(this).addClass('type2');
+		});
+		$("img:eq(2)").on("click", function() {
+			$(this).addClass('type3');
+		}); */
 		
 
 	</script>
-	
-	
-	
 	
 
 </body>

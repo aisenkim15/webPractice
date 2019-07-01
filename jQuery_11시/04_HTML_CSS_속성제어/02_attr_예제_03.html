@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<title>attr( )</title>
-<!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
+    <meta charset="UTF-8"/>
+    <title>attr( )</title>
+    <!-- jQuery library -->
+    <script src="jquery-1.7.2.min.js"></script>
 </head>
 <body>
-	
-	<div>
-		<a>제이쿼리닷컴</a>
 
-	</div>
+<div>
+    <a>제이쿼리닷컴</a>
 
-	<!---------- jQuery code Start ---------->
-	<script>
-		
-		// http://jquery.com으로 연결하는 링크를 추가하고
-		
-		// 제이쿼리닷컴을 http://jquery.com으로 변경
-		$("div a").attr("href", "http://jquery.com").text("http://jquery.com")
+</div>
 
-	</script>
-	
-	
-	
-	
-	
+<!---------- jQuery code Start ---------->
+<script>
+
+    // http://jquery.com으로 연결하는 링크를 추가하고
+
+    // 제이쿼리닷컴을 http://jquery.com으로 변경
+    //문법 방법 1
+    //$("div a").attr("href", "http://jquery.com").text("http://jquery.com").attr("target", "_blank")
+
+    //문법 방법2
+    $("div a").attr({
+        href: "http://jquery.com",
+        target: "_blank"
+    }).text("http://jquery.com")
+</script>
+
+
 </body>
 </html>

@@ -5,13 +5,13 @@
 <title> addClass() </title>
 <script src="jquery-1.7.2.min.js"></script>
 <style>
- 
+
 	img { padding:5px; background:#666;}
 
 	img.type1 { padding:5px; background: orange;}
 	img.type2 { padding:5px; background: blue;}
 	img.type3 { padding:5px; background: pink;}
-  
+
 </style>
 </head>
 
@@ -27,14 +27,25 @@
 		// 이미지 클릭시 클래스 type1을 추가하고,
 		// 이미지 한개씩 type1이 추가되도록 하시오
 		// $(this) 활용
-		
+        $("img").on("click", function () {
+            // $("img").css("backgroundColor", "orange")
+
+            //bottom 3 are 3different ways to define it
+
+            //$("img").attr("class","type1");
+            //$("img").attr({class: "type1"});
+            //$("img").addClass("type1");
+
+            //클릭이 발생한 이미지만 적용하기
+            $(this).addClass("type1");
+        });
 
 	</script>
-	
-	
-	
-	
-	
+
+
+
+
+
 
 </body>
 </html>
