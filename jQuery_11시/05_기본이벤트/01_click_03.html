@@ -19,15 +19,15 @@
 	 
 		// 리스트를 클릭할 때마다 이미지를 그 리스트의 이미지로 변경하시오
 		$("li :eq(1)").on("click", function (event) {
-			$(this).attr("href", "sea.jpg").attr("a", "바다");
+			$("img").attr("src", "sea.jpg").attr("a", "바다");
 			event.preventDefault();
 		});
 		$("li :eq(2)").on("click", function (event) {
-			$(this).attr("href", "Jellyfish.jpg");
+			$("img").attr("src", "Jellyfish.jpg");
 			event.preventDefault();
 		});
 		$("li :eq(3)").on("click", function (event) {
-			$(this).attr("href", "building.jpg");
+			$("img").attr("src", "building.jpg");
 			event.preventDefault();
 		});
 		

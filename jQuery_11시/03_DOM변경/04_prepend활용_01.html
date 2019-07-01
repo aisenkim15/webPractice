@@ -22,10 +22,9 @@
 		// prepend를 이용하여 기존의 태그위치를 이동할 수 있다
 		// 아이디 container 요소내 두개의 p요소의 위치를 바꾼다
 
-			// $("#container").append( $("#container p:first") );
-			$("#container").prepend( $("#container p:last") );
-		
-		
+
+		$("#container").prepend( $("#container p:last") );
+		// $("#container").children().eq(1).prependTo($("#container"))
 	 
 	</script>
 	
