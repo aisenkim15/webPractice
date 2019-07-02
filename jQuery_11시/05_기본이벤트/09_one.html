@@ -22,7 +22,13 @@
 		// one()은 이벤트 처리시 한번만 실행 
 		
 		// 리스트(a 태그) 클릭이벤트 한번만 적용되도록
-		
+		$("li").on("click", function (event) {
+			var imgVar = $(this).attr("href");
+			var altVar = $(this).text();
+			$("p img").attr({src: imgVar, alt: altVar});
+			event.preventDefault();
+
+		});
 			
 			
 		

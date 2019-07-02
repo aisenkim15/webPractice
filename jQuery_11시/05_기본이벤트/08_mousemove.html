@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <title>mousemove()</title>
 <script src="jquery-1.7.2.min.js"></script>
+<style>
+	#move{
+		position: absolute;
+	}
+</style>
 </head>
 <body>
 
@@ -13,6 +18,8 @@
 	<p></p>
     <p></p>
     <p></p>
+
+	<div id="move">Following Div</div>
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
@@ -26,9 +33,14 @@
 			$("p:eq(1)").text("clientX: " + e.clientX + "clientY: " + e.clientY);
 			$("p:eq(2)").text("screenX: " + e.screenX + "screen Y: " + e.screenY);
 			$("p:eq(3)").text("offsetX: " + e.offsetX + "offset Y: " + e.offsetY);
-		})
+		});
 		
-			
+		$(document).on("mousemove", function (e) {
+			$("#move").css({
+				left: e.pageX,
+				top: e.pageY
+			})
+		});
 			
 		
 	</script>
