@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>toggle()</title>
 <script src="jquery-1.7.2.min.js"></script>
+<script src="jquery-migrate-1.4.1.js"></script>
+<!--	Allow you to use things that have been gone by adding migrate version of jquery-->
 </head>
 <body>
 
@@ -16,8 +18,28 @@
 	<script type="text/javascript">
 
 		// button을 클릭할때마다 바다, 해파리, 건물, 꽃 이미지를 순서대로 로드하시오
-		
-		
+		var click =0;
+		// $("button").("click", function () {
+		// 	$("p img").attr({src:"sea.jpg", alt: "바다"})
+		// });
+
+		$("button").toggle(
+				function () {
+					$("p img").attr({src:"sea.jpg", alt:"바다"});
+				},
+				function () {
+					$("p img").attr({src:"Jellyfish.jpg", alt:"해파리"});
+
+				},
+				function () {
+					$("p img").attr({src:"building.jpg", alt:"빌딩"});
+
+				},
+				function () {
+					$("p img").attr({src:"flower.jpg", alt:"꽃"});
+
+				}
+		);
 		
 		
 		

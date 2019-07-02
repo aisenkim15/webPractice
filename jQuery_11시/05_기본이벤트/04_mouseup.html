@@ -19,7 +19,15 @@
 	<script type="text/javascript">
 
 		// 마우스를 클릭한상태를 해제했을 때 이미지가 바뀌도록
-		
+		$("li a").on("mouseup", function () {
+			var img = $(this).attr("href");
+			var altSource = $(this).text();
+			$("p img").attr({src:img, alt: altSource}).css("border", "0");
+		}).on("click", function (e) {
+			e.preventDefault();
+		}).on("mousedown", function () {
+			$("p img").css("border", "10px dotted orange");
+		})
 		
 		
 	</script>
