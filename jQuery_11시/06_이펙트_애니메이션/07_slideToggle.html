@@ -42,7 +42,9 @@
 	<script type="text/javascript">
 		
         // dt 클릭시 dd가 슬라이드 업/다운을 순차적으로 실행하도록
-  
+  	$("dt").on("click", function () {
+		$(this).sibling().slideToggle();
+	})
     
     
     	</script>
