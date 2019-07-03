@@ -6,7 +6,7 @@
 <style type="text/css">
 	div { width: 200px;
 		   height: 200px;
-		   background: red;
+		   background: lightpink;
 		   display: none;
 		  }
 </style>
@@ -21,6 +21,12 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
+
+		$("button").on("click", function () {
+			$("div").show(3000, function () {
+				$(this).css({backgroundColor: "blue"});
+			});
+		});
 		
 		// show() : display:none 상태의 노드를 보이도록 하는 명령어
 			

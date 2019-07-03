@@ -19,7 +19,12 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script>
-
+	$("#up").on("click", function () {
+		$("div:not(:animated)").slideUp();
+	})
+		$("#down").on("click", function () {
+			$("div:not(:animated)").slideDown();
+		})
 		
 
 	</script>

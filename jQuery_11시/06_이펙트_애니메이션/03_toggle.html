@@ -26,6 +26,23 @@
 		// $("selector").toggle(속도);			
         // 버튼을 클릭때마다 나타나고 사라지는 애니메이션 구현
 
+		//이벤트 토글
+		//Previous Method of using Toggle (only available with lower version of jquery or else, have to include migrage jquery)
+		/*
+		$("button").toggle(
+				function () {
+					$("div").show(1000);
+				},
+				function () {
+					$("div").hide(1000);
+				}
+		);
+*/
+		//this is toggle in animation
+		$("button").on("click", function () {
+			$("div:not(:animated)").toggle(1000);
+		})
+
 
 		
 	</script>
