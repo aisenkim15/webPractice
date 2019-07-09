@@ -21,23 +21,21 @@
 	
 	
 	<script type="text/javascript">
-		
-		// unbind()는 설정되어 있는 이벤트를 취소
 
-		// 리스트(a태그) 클릭시 이미지 바뀌도록
-		// 버튼을 클릭하면 a 태그에 설정된 이벤트 취소
-		$("li a").bind("click", function (e) {
-			var aa = $(this).attr("href");
-			var text = $(this).text();
-			$("p img").attr({src:aa, alt: text});
+		$("li a").on('click', function(e) {
+			var imgPath = $(this).attr('href');
+			var textName = $(this).text();
+			$('p img').attr({ src: imgPath, alt: textName  });
 			e.preventDefault();
 		});
 
-		$("button").on("click", function () {
-			// $("li a").unbind();
+		$("button").on("click", function() {
 			$("li a").off();
-		});
-			
+		})
+		
+		// unbind()는 설정되어 있는 이벤트를 취소
+		// 리스트(a태그) 클릭시 이미지 바뀌도록
+		// 버튼을 클릭하면 a 태그에 설정된 이벤트 취소
 		
 	</script>
 

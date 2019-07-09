@@ -16,33 +16,26 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
-
+	 
 		// 리스트를 클릭할 때마다 이미지를 그 리스트의 이미지로 변경하시오
-		/*
-		$("li :eq(0)").on("click", function (event) {
-			$("img").attr("src", "flower.jpg");
-			event.preventDefault();
-		});
-		$("li :eq(1)").on("click", function (event) {
-			$("img").attr("src", "sea.jpg");
-			event.preventDefault();
-		});
-		$("li :eq(2)").on("click", function (event) {
-			$("img").attr("src", "Jellyfish.jpg");
-			event.preventDefault();
-		});
-		$("li :eq(3)").on("click", function (event) {
-			$("img").attr("src", "building.jpg");
-			event.preventDefault();
-		}); */
 
-		//Quicker Way
-		$("a").on("click", function (event) {
-			var imgPath = $(this).attr("href");
+		$("li a").on('click', function(e) {
+			var imgPath = $(this).attr('href');
 			var textName = $(this).text();
-			$("p img").attr({src: imgPath, alt: textName});
-			event.preventDefault();
+			$('p img').attr({ src: imgPath, alt: textName  });
+			e.preventDefault();
 		});
+		/*
+		$("li a:eq(0)").on('click', function() {
+			$('p img').attr({ src: "flower.jpg", alt: "꽃" });
+			return false;
+		})
+		$("li a:eq(1)").on('click', function() {
+			$('p img').attr({ src: "sea.jpg", alt: "바다" });
+			return false;
+		}) */
+
+		
 		
 	</script>
 

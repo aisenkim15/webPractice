@@ -18,22 +18,19 @@
     <button id="hide">감추기</button>
     <button id="show">보이기</button>
 
-
-
     <!---------- jQuery code Start ---------->
     <script>
 
         // 좌우 접었다 펼치는 애니메이션을 만들어보자
         // width 속성을 사용
-
-
-
+        $("#hide").on('click', function() {
+            $('div').animate({ width: 0 }, 1000);
+        });
+        $("#show").on('click', function() {
+            $('div').animate({ width: 300 }, 1000);
+        });
 
     </script>
-
-
-
-
 
 </body>
 </html>

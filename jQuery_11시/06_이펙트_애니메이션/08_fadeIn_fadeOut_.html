@@ -17,7 +17,12 @@
 	
 	<!---------- jQuery code Start ---------->
 	<script type="text/javascript">
-
+		$("#fadeIn").on('click', function() {
+			$("p img:not(:animated)").fadeIn(1000);
+		});
+		$("#fadeOut").on('click', function() {
+			$("p img:not(:animated)").fadeOut(1000);
+		});
        
 	</script>
 

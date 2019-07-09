@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title> animate()  </title>
     <style>
-        div { width: 400px; height: 267px; overflow: hidden; }
+        div { width: 400px; height: 267px; overflow: hidden; border: 5px solid #f00; }
         p { width: 800px; height: 267px; margin: 0; }
     </style>
     <!-- jQuery library -->
@@ -32,13 +32,11 @@
         // margin 속성을 이용
 
         $("#flower").click(function () {
-
-
+            $("p").animate({ marginLeft: -400  });
         });
 
         $("#building").click(function () {
-
-
+            $("p").animate({ marginLeft: 0  });
         });
 
 

@@ -21,14 +21,15 @@
 	<script type="text/javascript">
 
 		// 마우스다운시 이미지가 바뀌도록
-		$("li a").on("mousedown", function (event) {
-			var img = $(this).attr("href");
-			var altInfo = $(this).text;
-			$("p img").attr({src:img, alt: altInfo});
-		}).on("click", function (e) {
+		
+		$("li a").on('mousedown', function() {
+			var imgPath = $(this).attr('href');
+			var textName = $(this).text();
+			$('p img').attr({ src: imgPath, alt: textName  });
+		}).on('click', function(e) {
 			e.preventDefault();
 		})
-		
+
 		
 	</script>
 

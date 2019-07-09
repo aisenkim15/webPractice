@@ -21,8 +21,28 @@
     
         // 3초후에 자동으로 이미지가 페이드인되도록 하시오
         // 3초마다 자동으로 이미지가 페이드를 반복하도록 하시오 
-        // 페이드시작, 페이드멈춤 버튼을 추가하여 페이드 제어하기 			
-		
+        // 페이드시작, 페이드멈춤 버튼을 추가하여 페이드 제어하기
+        /*
+        setTimeout(function() {
+            $("img").fadeIn();
+        }, 2000);
+        */
+        /*
+        function fading1() {
+            $("img").fadeIn();
+        }
+        setTimeout(fading1, 2000);
+        */
+        function fading2() {
+            $("img").fadeToggle(1000).adnij ;
+        }
+        var timing = setInterval(fading2, 3000);
+        $("#stop").on("click", function() {
+            clearInterval( timing );
+        });
+        $("#play").on('click', function() {
+             timing = setInterval(fading2, 1500);
+        });
 
 	</script>
 

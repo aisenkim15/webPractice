@@ -15,8 +15,9 @@
     <script >
 	
         // fadeToggle()을 이용한 투명애니메이션 적용하기
-
-      
+        $("#fade").on('click', function() {
+            $("p:not(:animated)").fadeToggle(2000);
+        });
 	
     </script>
 

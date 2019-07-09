@@ -13,6 +13,7 @@
 </style>
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
+<script src="jquery-ui.js"></script>
 
 <!---------- jQuery code Start ---------->
 <script>
@@ -20,7 +21,10 @@
 	// 버튼 클릭시 div가 지정된 색상으로  서서히 변하게 하시오
 	$(document).ready(function() {
 	
-		
+		$("button").on('click', function () {
+			$("div").animate({backgroundColor: "#ff9966", color: "#fff"});
+
+		})
 	
 	});
 

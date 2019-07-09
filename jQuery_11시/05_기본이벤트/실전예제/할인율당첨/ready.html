@@ -6,20 +6,18 @@
 		<link href="styles/my_style.css" rel="stylesheet">		
 		<script src="scripts/jquery-1.7.2.min.js"></script>
 		<script>
-            //할일목록
-			//1.클래스 guestbox 클릭시 #main의 제일 하단에 "당신의 할인율은 n%입니다" 출력도도록
-			//2.n은 10, 20, 20 ,40, 50 fdl fosejadmfh cnffur
-			//3. 클릭시 출력은 최초 한번만 되도록
-			$(document).ready(function () {
-				$(".guest_box").on("click", function (event) {
-					var ranNum = Math.ceil((Math.random() * 5)) * 10;
-					var tagger = "<p>당신의 할인율은:" + ranNum + "%</p>";
-					$("#main").append(tagger);
+            // 할 일 목록
+            // 1. 클래스 guest_box를 클릭시 #main의 제일 하단에
+            //    "<p>당신의 할인율은 n%입니다</p>" 를 출력되도록
+            // 2. n은 10, 20, 30, 40, 50 이 랜덤으로 출력
+            // 3. 클릭시 출력은 최초 한번만 되도록
+			$(document).ready(function() {
+				$(".guest_box").on("click", function() {
+					var n = Math.ceil(Math.random()*5) * 10 ;
+					$("#main").append("<p>당신의 할인율은 " + n + "%입니다</p>");
 					$('.guest_box').off();
-
 				});
 			})
-
 		</script>
 	</head> 
 	<body> 

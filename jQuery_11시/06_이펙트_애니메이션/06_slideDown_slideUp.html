@@ -15,17 +15,15 @@
 		<img src="sample1.jpg" alt=" " width="200" />
 	</div>
 	
-	
-	
 	<!---------- jQuery code Start ---------->
 	<script>
-	$("#up").on("click", function () {
-		$("div:not(:animated)").slideUp();
-	})
-		$("#down").on("click", function () {
-			$("div:not(:animated)").slideDown();
-		})
-		
+
+		$("#down").on('click', function() {
+			$("div:not(:animated)").slideDown(1000);
+		});
+		$("#up").on('click', function() {
+			$("div:not(:animated)").slideUp(1000);
+		});
 
 	</script>
 

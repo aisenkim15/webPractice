@@ -19,8 +19,17 @@
 			
 		// 버튼 클릭시 이미지가 반투명하게
 		// $("selector").fadeTo(속도, 투명도);
-		
 
+		$("#fade0").on('click', function() {
+			// $("p img").fadeOut();
+			$("p img").fadeTo(500, 0);
+		});
+		$("#fade100").on('click', function() {
+			$("p img").fadeTo(500, 1);
+		});
+		$("#fade50").on("click", function() {
+			$("p img").fadeTo(500, 0.5);
+		});
 
 	</script>
 

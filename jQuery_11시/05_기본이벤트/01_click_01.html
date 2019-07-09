@@ -11,12 +11,14 @@
 	<p><img src="flower.jpg" alt="꽃" /></p>	
 	
 	<!---------- jQuery code Start ---------->
-	<script type="text/javascript">
+	<script>
 	
 		// 버튼을 클릭시 꽃 이미지를 바다 이미지로 변경하시오
-		$("button").on("click", function () {
-			$("img").attr("src", "sea.jpg").attr("alt", "바다");
-		})
+		$("button").on('click', function() {
+		// $("button").bind('click', function() {
+		// $("button").click(function() {
+			$("p img").attr({ src: "sea.jpg", alt: "바다" });
+		});
 		
 			
 		

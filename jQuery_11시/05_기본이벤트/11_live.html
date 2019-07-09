@@ -21,22 +21,18 @@
     <script type="text/javascript">
 
         // 버튼 클릭시 건물이미지 리스트를 추가하고, a 이벤트가 적용되도록
-       $("li a").live("click", function (e) {
-           var list = $(this).attr("href");
-           var text = $(this).text();
 
-           $("p img").attr({src: list, alt: text})
-           e.preventDefault();
-       });
-        $("button").on("click", function (e) {
-            var imgSource = "<li><a href='building.jpg'>빌딩</a></li>"
-            $("ul").append(imgSource);
+        $("li a").live('click', function(e) {
+			var imgPath = $(this).attr('href');
+			var textName = $(this).text();
+			$('p img').attr({ src: imgPath, alt: textName });
+			e.preventDefault();
+		});
 
-        })
-
-
-
-       
+		$("button").one('click', function() {
+		    lastLi = '<li><a href="building.jpg"> 건물</a></li>';
+		    $('ul').append(lastLi);
+		});
 
     </script>
 
