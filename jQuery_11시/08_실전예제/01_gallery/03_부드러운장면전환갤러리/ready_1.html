@@ -36,6 +36,17 @@
 
 	<!---------- jQuery code Start ---------->
 	<script>
+
+        function fading() {
+            $(".fadeShow img:eq(0)").animate({opacity: 0}, 1000, function () {
+                $(".fadeShow").append($(this));
+                $(this).css({opacity:1});
+            });
+        }
+
+        setInterval(fading, 2000);
+
+
 		
 		/* 할 일 목록
 		

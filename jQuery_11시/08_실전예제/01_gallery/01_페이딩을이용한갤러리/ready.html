@@ -85,6 +85,15 @@
 			
 		4. a 태그의 값을 제거
 		*/
+
+		$("#navi li").on("click", function () {
+			var imgPath = $(this).children('a').attr('href');
+			$("#main").prepend('<img src="' + imgPath + '" alt=" " />');
+			$("#main img:eq(1)").fadeOut(1000, function () {
+				$(this).remove();
+			});
+			return false;
+		});
 				
 	</script>
 	
