@@ -79,12 +79,16 @@
     
     $("#menu li").hover(
       function () {
-          $('this').stop().animate({opacity: 1});
+          $('this').stop().animate({opacity: 0.7});
       },
       function () {
           $('this').stop().animate({opacity: 1});
       }
     );
+
+    $(document).on("mousemove", function (e) {
+        $("#home").css({top: e.pageY});
+    });
 
 </script>
 

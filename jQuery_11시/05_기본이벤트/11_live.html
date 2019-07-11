@@ -7,39 +7,34 @@
 </head>
 <body>
 
-    <button>li 요소를 추가</button>
+<button>li 요소를 추가</button>
 
-    <ul>
-        <li><a href="flower.jpg"> 꽃</a></li>
-        <li><a href="sea.jpg"> 바다</a></li>
-        <li><a href="jellyfish.jpg"> 해파리</a></li>
-    </ul>
+<ul>
+    <li><a href="flower.jpg"> 꽃</a></li>
+    <li><a href="sea.jpg"> 바다</a></li>
+    <li><a href="Jellyfish.jpg"> 해파리</a></li>
+</ul>
 
-    <p><img src="flower.jpg" alt=" 꽃" /></p>
+<p><img src="flower.jpg" alt=" 꽃"/></p>
 
-    <!---------- jQuery code Start ---------->
-    <script type="text/javascript">
+<!---------- jQuery code Start ---------->
+<script type="text/javascript">
 
-        // 버튼 클릭시 건물이미지 리스트를 추가하고, a 이벤트가 적용되도록
+    // 버튼 클릭시 건물이미지 리스트를 추가하고, a 이벤트가 적용되도록
 
-        $("li a").live('click', function(e) {
-			var imgPath = $(this).attr('href');
-			var textName = $(this).text();
-			$('p img').attr({ src: imgPath, alt: textName });
-			e.preventDefault();
-		});
+    $("li a").live('click', function (e) {
+        var imgPath = $(this).attr('href');
+        var textName = $(this).text();
+        $('p img').attr({src: imgPath, alt: textName});
+        e.preventDefault();
+    });
 
-		$("button").one('click', function() {
-		    lastLi = '<li><a href="building.jpg"> 건물</a></li>';
-		    $('ul').append(lastLi);
-		});
+    $("button").one('click', function () {
+        lastLi = '<li><a href="building.jpg"> 건물</a></li>';
+        $('ul').append(lastLi);
+    });
 
-    </script>
-
-
-
-
-
+</script>
 
 </body>
 </html>
