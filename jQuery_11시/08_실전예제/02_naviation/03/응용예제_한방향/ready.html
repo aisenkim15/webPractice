@@ -10,8 +10,8 @@
         p { cursor: pointer; }
         p.prev { position: absolute; top: 50px; left: -10px; }
         p.next { position: absolute; top: 50px; right: -10px; }
-        #wrap { width:100%; height:100%; overflow:hidden; }
-        ul { float: left; }
+        #wrap { width:100%; height:100%; overflow: hidden; }
+        ul {  }
         ul li { list-style: none; float: left; width:140px; height:105px; display:inline; }
 
     </style>
@@ -33,19 +33,32 @@
     <script>
 	
         // 초기
-        
+        var liWidth = $("#wrap ul li").width();
+        var totalWidth = liWidth * $("#wrap ul li").length;
+        $("#wrap ul").css({ width: totalWidth});
 
-        // 이전
-        $("p:first").click(function () {
-            
+        var timing = setInterval(function() { $(".next").click() }, 2000);
+        $("p").click(function() {
+            clearInterval(timing);
+            timing = setInterval(function() { $(".next").click() }, 2000);
         });
 
         // 다음
-        $("p:last").click(function () {
-            
-			
+        $(".next").click(function () {
+            $("#wrap ul:not(:animated)").animate({ marginLeft: -liWidth }, function() {
+                $(this).append($("#wrap ul li:first"));
+                $(this).css({ marginLeft: 0 });
+            })
         });
-		
+
+        // 이전
+        $(".prev").click(function () {
+            $("#wrap ul:not(:animated)").prepend($("#wrap ul li:last"))
+                            .css({ marginLeft: -liWidth })
+                            .animate({ marginLeft: 0 });
+        });
+
+
     </script>
 </body>
 </html>

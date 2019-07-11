@@ -90,19 +90,48 @@
 	  <ul id="btnGroup">
 			<li id="btn0"><a href="image/slide1.jpg">1</a></li>
 			<li id="btn1"><a href="image/slide2.jpg">2</a></li>  
-			<li id="btn3"><a href="image/slide3.jpg">3</a></li>
-			<li id="btn4"><a href="image/slide4.jpg">4</a></li>     
-	   
+			<li id="btn2"><a href="image/slide3.jpg">3</a></li>
+			<li id="btn3"><a href="image/slide4.jpg">4</a></li>
 	   </ul>
+        <div id="btnWrap">
+            <a href="#" id="stop">stop</a>
+            <a href="#" id="play">play</a>
+        </div>
 		
 	</div>
 
 	<!---------- jQuery code Start ---------->        
 	<script>
-		 
+		// setInterval을 이용하여 -600 씩 움직이도록
+		// 특정위치에 가면 1번으로 되돌아가도록 조건문 적용
+
+		var liWidth = $("#viewer img").width();
+        var lastPos = ($("#btnGroup li").length-1) * liWidth
+		function sliding() {
+			if ( $("#viewer").css("left") == "-"+lastPos+"px"  ) {
+				$("#viewer").animate({ left: 0 });
+			} else {
+				$("#viewer").animate({ left: "-=" + liWidth });
+			}
+        }
+		var pause = setInterval(sliding, 2000);
+
+		$("#btnGroup li").on('click', function(e) {
+			var pos = $(this).index() * (-liWidth);
+			$("#viewer").animate({ left: pos });
+            clearInterval(pause);
+            pause = setInterval(sliding, 3000);
+			e.preventDefault();
+		});
+		$("#stop").on('click', function() {
+            clearInterval(pause);
+		});
+		$("#play").on('click', function() {
+            pause = setInterval(sliding, 3000);
+		})
+
 				 
 	</script>
-
 
 </body>
 </html>

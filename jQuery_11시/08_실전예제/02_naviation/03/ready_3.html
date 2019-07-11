@@ -98,21 +98,41 @@
 
 	<!---------- jQuery code Start ---------->        
 	<script>
-        	
+		// 초기설정
+		$("#viewer").css({ left: 0 });
+		var liPos = $("#viewer img").width();
+		var lastPos = ($("#viewer img").length -1) * liPos;
+
+		// 슬라이딩반복
+		var timing = setInterval( function() {
+			$("#btnRight a").click();
+		}, 3000);
+
+		// 좌,우 버튼 클릭시 반복중지
+		$("#btnGroup li a").on('click', function() {
+			clearInterval(timing);
+			timing = setInterval( function() {
+				$("#btnRight a").click();
+			}, 3000);
+		});
+
+		$("#btnRight a").click(function () {
+			if ($("#viewer").css('left') == "-"+lastPos+"px" ) {
+				$("#viewer:not(:animated)").animate({ left: 0 });
+			} else {
+				$("#viewer:not(:animated)").animate({ left: "-=" + liPos });
+			}
+			return false;			
+		});
+
 		$("#btnLeft a").click(function () {
-			
-			
-			
-			return false;			
-		});			
-		
-		$("#btnRight a").click(function () {	
-				
-			
-			
-			return false;			
-		});	
-		
+			if ($("#viewer").css('left') == "0px" ) {
+				$("#viewer:not(:animated)").animate({ left: -lastPos });
+			} else {
+				$("#viewer:not(:animated)").animate({ left: "+=" + liPos });
+			}
+			return false;
+		});
 	</script>
 
 </body>
