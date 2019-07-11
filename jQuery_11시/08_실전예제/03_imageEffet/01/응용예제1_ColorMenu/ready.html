@@ -40,13 +40,13 @@
 	<script>
 						
 			//When mouse rolls over
-			$("li").mouseover(function(){
-				
+			$("li").mouseenter(function(){
+				$(this).stop().animate({height: 150})
 			});
 			
 			//When mouse is removed
-			$("li").mouseout(function(){
-				
+			$("li").mouseleave(function(){
+				$(this).stop().animate({height: 50})
 			});
 			
 	</script>

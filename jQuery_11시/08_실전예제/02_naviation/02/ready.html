@@ -79,15 +79,27 @@
     
     $("#menu li").hover(
       function () {
-          $('this').stop().animate({opacity: 0.7});
+          $('this').stop().animate({opacity:1});
       },
       function () {
-          $('this').stop().animate({opacity: 1});
+          $('this').stop().animate({opacity: 0.7});
       }
     );
 
-    $(document).on("mousemove", function (e) {
-        $("#home").css({top: e.pageY});
+    $("#home").on("mousemove", function (e) {
+        var height = ($("#home").height())/2;
+        var num = $("#container").css("top");
+
+        $("#container").css({top: e.pageY - height});
+        // if(num <= "0px"){
+        //     $("#container").css({top: 0});
+        // }
+
+        if (e.pageY < height) {
+            $("#container").css({top: 0});
+        }
+
+
     });
 
 </script>

@@ -28,9 +28,43 @@
 
 	<!------------------------ jQuery 코드 ----------------------->
 	<script>
-		
-		
-	
+
+		var count = 0;
+		var timing;
+
+		for (var i = 0; i < 21; i++) {
+			$("#ani").append("<img src = 'seq/seq"+ i + ".png'>");
+			$("#ani img:eq(0)").show();
+		}
+
+		function nextFrame() {
+			count++;
+			if (count > 20) {
+				count = 20;
+				clearInterval(timing);
+			}
+			$("#ani img:visible").hide();
+			$("#ani img:eq("+count+")").show();
+		}
+
+		function prevFrame() {
+			count--;
+			if (count < 0) {
+				count =0;
+				clearInterval(timing);
+			}
+			$("#ani img:visible").hide();
+			$("#ani img:eq("+count+")").show();
+
+		}
+
+		$("#ani").on("mouseenter", function () {
+			timing = setInterval(nextFrame, 100);
+		}).on("mouseleave", function () {
+			timing = setInterval(prevFrame, 100);
+		});
+
+
 	
 	
 	
