@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title> toggle </title>
-<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script src="jquery-migrate-1.4.1.js"></script>
 
 <style>
 	div {width:200px; height:100px; background:#F00;}
@@ -23,7 +24,19 @@
 		 || 박스를 클릭할 때마다 배경색이 3가지(노랑, 검정, 초록) 색상으로 순서대로 변하기		
 		Tip1. 하나의 요소를 이용하여 여러가지 이펙트를 제어		
 		
-		*/	   
+		*/
+
+		$("div").toggle(
+				function () {
+					$(this).css({background: "blue"})
+				},
+				function () {
+					$(this).css({background: "orange"})
+				},
+				function () {
+					$(this).css({background: "red"})
+				}
+		);
 		 
 	</script>
 </body>

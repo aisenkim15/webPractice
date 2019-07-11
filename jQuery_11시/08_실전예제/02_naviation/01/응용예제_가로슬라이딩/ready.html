@@ -98,17 +98,18 @@
 		$("dt:first span").addClass("selected");
 		
 		$("dl dt").click(function(){
-		
-			
+			$("dd").not($(this).next()).animate({width: 0});
+			$(this).next().animate({width: 695});
+
+			$('dt').children('span').removeClass('selected');
+			$(this).children('span').addClass('selected');
 		
 		}).mouseover(function(){
-			
 			// 마우스 오버시 클래스 over 추가
-			
+			$(this).children('span').addClass('over');
 		}).mouseout(function(){
-		
 			// 마우스 오버시 클래스 over 삭제
-
+			$(this).children('span').removeClass('over')
 		});
 	
 	</script>

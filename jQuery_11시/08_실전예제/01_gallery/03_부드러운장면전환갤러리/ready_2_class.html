@@ -37,7 +37,15 @@
 
 	<!---------- jQuery code Start ---------->
 	<script>
-		
+
+        function fading(){
+            $(".fadeShow .active").animate({opacity: 0}, function () {
+                $(".fadeShow").append($(this));
+                $(this).css({opacity: 1}).removeClass('active');
+                $(".fadeShow img:eq(0)").addClass('active');
+            })
+        }
+		setInterval(fading, 2000);
 		/* 할 일 목록
 		
 		Tip1.  position 속성적용으로 slide2 이미지가 slide1 이미지보다 위에 보임

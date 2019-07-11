@@ -54,16 +54,16 @@
 <div class="thumbs">
 
     <a href="images/pic1.jpg" title="image1"><img src="images/th_pic1.jpg"/></a>
-    <em>Lorem Ipsum is simply dummy text of the pdrinting and typesetting industry.</em>
+    <em>first pics Lorem Ipsum is simply dummy text of the pdrinting and typesetting industry.</em>
 
 
     <a href="images/pic2.jpg" title="image2"><img src="images/th_pic2.jpg"/></a>
-    <em> Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
+    <em> second pics Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
         Sed facilisis, sem a luctus bibendum, dui risus pellentesque velit, quis tempor magna
         sem vel justo. Etiam eget ipsum ante. </em>
 
     <a href="images/pic3.jpg" title="image3"><img src="images/th_pic3.jpg"/></a>
-    <em> Lorem Ipsum is simply dummy.</em>
+    <em> Third pics Lorem Ipsum is simply dummy.</em>
 
 </div>
 
@@ -90,9 +90,11 @@
         // console.log(parseInt($("#caption").css('height')));
 
         //one another way
-        var height = -$("#caption").outerHeight();
+        var height = -$("#caption").innerHeight();
+        console.log(-$("#caption").innerHeight());
         $("#caption").text(text1).animate({top: height});
 
+        //ask why the above method doesn't work
 
         return false;
     })
