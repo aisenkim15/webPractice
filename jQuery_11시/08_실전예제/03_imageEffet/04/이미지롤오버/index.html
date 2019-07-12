@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+        #photo div {
+            width: 476px;
+            height: 505px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        #photo  div img {
+            position: absolute;
+            top: 0;
+            left: 476px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo">
+        <div class="photo1"><img src="images/fit_over.jpg" alt=""></div>
+        <div class="photo2"><img src="images/frm_over.jpg" alt=""></div>
+        <div class="photo3"><img src="images/ldn_over.jpg" alt=""></div>
+    </div>
+
+    <script>
+        // $("#photo div img").hide();
+        $("#photo div").each(function () {
+            var text = $(this).children().attr("src").substring(0,10);
+            console.log(text);
+            $(this).css({background: "url(" + text + ".jpg) no-repeat"});
+        });
+
+        $("#photo div").hover(
+            function () {
+                $(this).children().stop().animate({left:0});
+            },
+            function () {
+                $(this).children().stop().animate({left: 476});
+            }
+
+        )
+    </script>
+</body>
+</html>

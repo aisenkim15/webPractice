@@ -26,7 +26,7 @@ body {
 <body>
 
 <div id="colorPicker">
-    <div>red</div>
+    <div>lightgreen</div>
     <div>maroon</div>
     <div>brown</div>
     <div>orange</div>
@@ -35,6 +35,14 @@ body {
       
 <!------------------------ jQuery 코드 ----------------------->
 <script>
+    $("#colorPicker div").each(function () {
+        var text = $(this).text();
+        $(this).css({backgroundColor: text})
+    }).on("click", function () {
+        var text = $(this).text();
+        $("body").animate({backgroundColor: text});
+    });
+
 
  
 </script>

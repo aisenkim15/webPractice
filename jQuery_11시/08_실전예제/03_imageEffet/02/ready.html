@@ -59,23 +59,20 @@
 		}
 
 		$("#ani").on("mouseenter", function () {
+			if (timing) {
+				clearInterval(timing);
+			}
 			timing = setInterval(nextFrame, 100);
 		}).on("mouseleave", function () {
+			if (timing) {
+				clearInterval(timing);
+			}
 			timing = setInterval(prevFrame, 100);
 		});
 
 
-	
-	
-	
-	
-	  
 	</script>
 	
-	
-	
-	
-	
-	
+
 </body>
 </html>

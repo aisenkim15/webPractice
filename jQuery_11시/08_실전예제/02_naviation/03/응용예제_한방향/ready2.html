@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>한방향 슬라이더 2</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        #wrapper {
+            width: 200px;
+            position: relative;
+            border: 1px solid #0000FF;
+            margin: 100px auto 0;
+            overflow: hidden;
+        }
+        .prev {
+            position: absolute;
+            left: 5px;
+            top: 45px;
+        }
+        .next {
+            position: absolute;
+            right: 5px;
+            top: 45px;
+        }
+        #wrap {
+            width: 140px;
+            border: 5px solid #F00;
+            margin: 0 auto;
+        }
+        #wrap ul {
+            overflow: hidden;
+            width: 420px;
+        }
+        #wrap ul li {
+            width: 140px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <p class="prev"><img src="images/btn_prev.png" alt="이전" /></p>
+    <p class="next"><img src="images/btn_next.png" alt="다음" /></p>
+    <div id="wrap">
+        <ul>
+            <li><img src="images/photo1_thum.jpg" alt="" /></li>
+            <li><img src="images/photo2_thum.jpg" alt="" /></li>
+            <li><img src="images/photo3_thum.jpg" alt="" /></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $("#wrap ul").prepend($("#wrap ul li:last"));
+    $("#wrap ul").css({marginLeft: -140});
+
+    $(".next").on("click", function () {
+        $("#wrap ul").stop().animate({marginLeft: -280}, 1000, function () {
+            $("#wrap ul").append($("#wrap ul li:first"));
+            $("#wrap ul").css({marginLef: -140});
+        })
+    });
+
+    $(".prev").on("click", function () {
+        $("#wrap ul").stop().animate({marginLeft: 0}, 1000, function () {
+            $("#wrap ul").prepend($("#wrap ul li:last"));
+            $("#wrap ul").css({marginLef: -140});
+        })
+    });
+
+    var timing = setInterval(function () {
+        $(".next").click();
+    }, 3000);
+
+    $("p").on("click", function () {
+        clearInterval(timing);
+        timing = setInterval(function () {
+            $(".next").click();
+        }, 3000);
+        //클릭후 다시 3초씩 돌아가는거 실행 하고싶을떄
+    })
+</script>
+</body>
+</html>
