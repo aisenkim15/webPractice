@@ -8,8 +8,16 @@
 	body {font-family:dotum;}
 	
 	/* CSS 적용 */
-	#area {   }
-	#tip {   } /* 마우스를 따라다니기 위해서 position 속성 적용
+	#area {
+		width: 800px;
+		height: 300px;
+		background: #fcc;
+		margin: 50px auto 0;
+		position: relative;
+	}
+
+	#tip { padding: 10px 20px;  background: #fff; border: 1px solid #000; position: absolute} /* 마우스를 따라다니기 위해서 position 속성 적용
+
 	
 </style>
 <script src="jquery-1.7.2.min.js"></script>
@@ -21,26 +29,25 @@
 	<script>
 		
 		// Tip1. #area의 data-title의 속성이 툴팁으로 나타나도록 한다
-
+		$("#tip").hide();
 		
 		// #area 영역안에서 마우스가 움직일 때 같이 움직일 #tip의 위치값 산출
 		$("#area").mousemove(function(e){ 
 		
-			//e.pageX, e.pageY	
-			
-			
+			//e.pageX, e.pageY
+			$('#tip').css({left: e.pageX + 2, top: e.pageY + 2})
 		});
 		
 		//
 		$("#area").hover(
 		
 			function() {
-			
-				
+				var getText = $(this).attr('data-title');
+				$("#tip").show().text(getText);
 			}, 
 			
 			function() {
-				
+				$("#tip").hide();
 			}
 		);
 	

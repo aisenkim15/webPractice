@@ -1,0 +1,38 @@
+body, ul{
+    margin: 0; padding: 0;
+}
+li {
+    list-style: none;
+}
+#container {
+    width: 540px;
+    margin: 50px auto 0;
+}
+
+.menu{}
+.menu li {
+    width: 179px;
+}
+.menu li a {
+    display: block;
+    height: 48px;
+    background: url(images/btn.png) no-repeat;
+    color: #ffff66;
+    text-decoration: none;
+    line-height: 48px;
+    text-indent: 30px;
+}
+
+.menu > li {
+    float: left;
+}
+
+.sub >li{
+    position: relative;
+}
+
+.sub .sub{
+    position: absolute;
+    top: 0;
+    left: 179px;
+}
