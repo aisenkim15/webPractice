@@ -5,7 +5,7 @@
 <title> animateColor </title>
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
-<script src="jquery-ui.js"></script>
+<!--<script src="jquery-ui-1.8.23.custom.min.js"></script>-->
 
 <style>
 ul { min-width:800px; }
@@ -38,6 +38,7 @@ li a{
     $("li").hover(
         function () {
             var bg = $(this).children().attr("data-bg");
+            console.log(bg);
             //$(this).children().css('background', bg);
             $(this).children().stop().animate({backgroundColor: bg, 'color': "#fff"});
         },
