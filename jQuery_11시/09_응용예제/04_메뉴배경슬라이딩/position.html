@@ -9,7 +9,7 @@
 	p.hello { background: red; }
 	
 </style>
-<script src="js/jquery-1.7.2.min.js"></script>
+<script src="jquery-1.7.2.min.js"></script>
 </head>
 <body>
  
@@ -21,8 +21,18 @@
  
 	<script>
 	
-		
-	
+		var pos = $(".hello").position();
+		console.log(pos);
+		var pos2 = $(".hello").offset();
+		console.log(pos2);
+
+		var posX = $(".hello").position().left;
+		console.log(posX);
+
+		var posY = $(".hello").position().top;
+
+		$(".first").text(posX + "px");
+		$(".first").text(posY + "px");
 	</script>
 	
 	

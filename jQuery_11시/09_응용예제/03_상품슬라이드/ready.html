@@ -4,7 +4,45 @@
 <title>상품 슬라이드</title>
 <meta charset="utf-8">
 <style>
+	body, ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		list-style: none;
+	}
+	#scroll_wrap {
+		width: 400px;
+		padding: 50px 100px;
+		border: 1px solid #0000;
+		position: relative;
+	}
+	/*좌우버튼*/
+	#scroll_wrap span {
+		position: absolute;
+		top:100px;
 
+	}
+	#scroll_wrap span.left {
+		left:50px;
+	}
+	#scroll_wrap span.right {
+		right:50px;
+	}
+	/*슬라이더 이미지*/
+	.scroll {
+		overflow: scroll;
+		width:400px;
+	}
+	.scroll ul {
+		width: 1000px;
+	}
+	.scroll ul li {
+		width: 90px;
+		float: left;
+		margin: 0 5px;
+
+	}
 </style>
 <script src="jquery-1.7.2.min.js"></script>
 </head>
@@ -30,8 +68,14 @@
 	</div>
 
 	<script>
-	
-		
+		$(".right").on("click", function () {
+			// $(".scroll ul").animate({marginLeft: "-=" + 100})
+			$(".scroll:not(:animated)").animate({scrollLeft: "+=" + 100});
+		});
+		$(".left").on("click", function () {
+			$(".scroll:not(:animated)").animate({scrollLeft: "-=" + 100});
+
+		})
 		
 	</script>
 	

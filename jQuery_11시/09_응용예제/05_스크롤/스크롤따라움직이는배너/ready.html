@@ -23,13 +23,12 @@
 	<div id="banner">배너</div>	
 	
 	<script>
-	
-		v
+		$(window).scroll(function () {
+			// console.log($(window).scrollTop());
+			var scrollY = $(window).scrollTop();
+			$("#banner").stop().animate({top: scrollY +20});
+		});
 	</script>
-	
-	
-	
-	
-	
+
 </body>
 </html>

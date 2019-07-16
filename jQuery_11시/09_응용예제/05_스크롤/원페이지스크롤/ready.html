@@ -28,11 +28,20 @@
 	#navigation li a { text-decoration:none; color:#FFF;}
 	#navigation li a:hover {color:#0F0;}
 
-	#wrap {width:800px;margin:0 auto;margin-top:80px;  }
-	#red{background:red; height:700px;}
-	#blue{background:blue; height:700px;}
-	#yellow{background:yellow; height:700px;}
-	#black{background:black; height:700px;}
+	#wrap {
+		width: 800px;
+		margin: 0 auto;
+		margin-top: 80px;
+		color: #fff;
+		font-size: 100px;
+	}
+	#wrap div{
+		height: 900px;
+	}
+	#red{background:red; }
+	#blue{background:blue;}
+	#yellow{background:yellow;}
+	#black{background:black; }
 
 </style>
 </head>
@@ -65,12 +74,9 @@
 				
 		*/
 		$("ul li a").click( function() {
-		
-			
-			
-			
-			
-			
+			var idName = $(this).attr("href");
+			var pos = $(idName).position().top;
+			$("html, body").stop().animate({scrollTop: pos-80})
 			return false;
 			   
 		});

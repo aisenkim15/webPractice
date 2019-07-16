@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body, ul { margin: 0; padding: 0; }
+        li { list-style: none; }
+
+        #wrap { position: relative; margin: 50px 0 0 50px; }
+        #wrap ul { overflow: hidden; width: 1010px;  }
+        #wrap ul li { width: 200px; height: 150px;
+                        float: left; border: 1px solid #000;
+                        text-align: center; line-height: 150px; }
+        #bg { position: absolute; top: 1px; left: 1px;
+                width: 180px; height: 130px;
+                border: 10px solid hotpink; }
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="bg"></div>
+        <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li>리스트3</li>
+            <li>리스트4</li>
+            <li>리스트5</li>
+            <li>리스트6</li>
+            <li>리스트7</li>
+            <li>리스트8</li>
+            <li>리스트9</li>
+            <li>리스트10</li>
+        </ul>
+    </div>
+    <script>
+        $("#wrap li").on("mouseenter", function() {
+            var posTop = $(this).position().top;
+            var posLeft = $(this).position().left;
+
+            $("#bg").stop().animate({top: posTop+1, left: posLeft+1}, 100);
+        });
+
+    </script>
+</body>
+</html>

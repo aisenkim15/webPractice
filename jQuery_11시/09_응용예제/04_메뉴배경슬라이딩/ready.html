@@ -46,15 +46,18 @@
 
 	<script>
 	
-			$("#menu_sl li").mouseover(function(){
+			$("#menu_sl li").mouseenter(function(){
 			
 				//  메뉴 배경이 이동할 위치값 구하기 position() 이용
-				
-				
+				var posY = $(this).position().top;
+				console.log(posY);
+
 				// 이펙트 효과적용 
+				$(".arrow").stop().animate({top: posY}, 50);
 				
-				
-				// 마우스 hover 시 CSS를 적용하도록 
+				// 마우스 hover 시 CSS를 적용하도록
+				$("#menu_sl li").removeClass('on');
+				$(this).addClass('on');
 				// 현재요소에만 클래스네임 on 추가
 				
 				
