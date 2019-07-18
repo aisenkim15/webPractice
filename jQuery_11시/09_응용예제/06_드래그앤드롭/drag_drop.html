@@ -8,7 +8,7 @@
 	html, body { height: 100%; }
 	
 	#floatWindow { position: absolute; top: 50px; left: 100px; 
-							width:300px; height: 200px; }
+						width:300px; height: 200px; }
 	a.close { position:absolute; top: 5px; right: 5px; 
 					display: block; width: 50px; 
 					line-height: 40px; text-align: center; 
@@ -49,26 +49,18 @@
 		
 		$("#floatWindow dt").mousedown(function(e){
 
-			$(document).mousemove(function() {
+			$("#floatWindow").data("clickX",  e.pageX - $("#floatWindow").offset().left )
+			$("#floatWindow").data("clickY",  e.pageY - $("#floatWindow").offset().top )
+
+			$(document).mousemove(function(e) {
+				$("#floatWindow").css({ left: e.pageX - $("#floatWindow").data("clickX"),
+											  top: e.pageY - $("#floatWindow").data("clickY")
+											 });
 
 			});
 			
-			console.log( $("#floatWindow").offset().left );
-			console.log( $("#floatWindow").offset().top );
-			console.log( e.pageX, e.pageY );
-			console.log( e.pageX - $("#floatWindow").offset().left );
-			console.log( e.pageY - $("#floatWindow").offset().top );
-
-			// console.log( $("#floatWindow").css("top") );
-			// console.log( $("#floatWindow").css("left") );
-			//console.log( $("#floatWindow").data("clickX") );
-			//console.log( $("#floatWindow").data("clickY") );
-
-			
 		}).mouseup(function(){
-			
-
-
+			$(document).unbind('mousemove');
 		});
 		
 		

@@ -1,0 +1,49 @@
+/* 초기화 */
+html, body { height: 100%; }
+body, h1, h2, h3, ul { margin: 0; padding: 0; }
+li { list-style: none; }
+a { text-decoration: none; }
+.hidden { position: absolute; left: -9999px; }
+
+/* 헤더 */
+#header {
+    position: relative;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.7);
+    height: 100px;
+    overflow: hidden;
+}
+#header h1 {  }
+
+/* 로컬네비 */
+#lnb {  }
+.subMenuWrap { overflow: hidden; width: 1280px; margin: 0 auto ;  }
+.subTotal { margin-left: 500px;  }
+
+/* 공통 */
+.subTotal li { width:150px; float: left;}
+.subTotal li a {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-align: center;
+}
+
+
+/* 개별 */
+.subTotal > li { width: 150px; float: left; }
+.subTotal > li > a { display: block; padding: 10px 0; color: #000; text-align: center; }
+
+
+/*서브메뉴*/
+.subMenu{}
+.subMenu li{text-align: center; line-height: 30px;}
+.subMenu li a{}
+
+/* 비디오 */
+#videoWrap { overflow :hidden;
+                position: absolute; top: 0; left: 0;
+                width: 100%; height: 100%; }
+video { position: absolute; top: 0; left: 0;
+        width: 100%; min-width: 1920px;
+        height: auto !important; min-height: 100%; }
