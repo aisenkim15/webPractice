@@ -23,10 +23,10 @@
     #gnb li { float: left; padding: 0 30px; line-height: 50px; }
     #gnb li a { color: #000; font-size: 20px; }
 
-    #gnb.effect {  }
-    #gnb.effect li a {  }
+    #gnb.effect { background: rgba(0,0,0,0.9) }
+    #gnb.effect li a { color: #fff }
 
     /*섹션공통*/
-    section { height: 100%; padding: 0 50px; }
+    section {overflow: hidden; height: 100%; padding: 0 50px; }
     section h2 { margin-top: 100px; }
     section p { margin: 50px 0; }
