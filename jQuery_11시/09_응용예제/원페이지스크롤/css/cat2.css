@@ -1,0 +1,86 @@
+html, body {
+    height: 100%;
+}
+
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#headerWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#header {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+#header h1 {
+    color: #fff;
+    font-size: 50px;
+
+}
+
+#gnb {
+    width: 100%;
+    height: 50px;
+    background: #000;
+}
+
+#gnb ul {
+    overflow: hidden;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#gnb li {
+    width: 33.3333%;
+    height: 50px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+}
+
+#gnb li a {
+    color: #fff;
+    font-size: 30px;
+}
+
+/*section*/
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#section1 {
+    background: url(../images/cat1.jpg) no-repeat 50% 0 fixed;
+}
+
+#section2 {
+    background: url(../images/cat2.jpg) no-repeat 50% 0 fixed;
+}
+
+#section3 {
+    background: url(../images/cat3.jpg) no-repeat 50% 0 fixed;
+}
+
+section > div {
+    padding-top: 200px;
+    font-size: 50px;
+}

@@ -1,0 +1,15 @@
+body{
+    padding: 300px;
+    margin-left: 400px;
+}
+button {
+    margin: 10px;
+}
+div{
+    color: blue;
+    font-weight: bold;
+}
+span{
+    color: red;
+    font-size: 15px;
+}

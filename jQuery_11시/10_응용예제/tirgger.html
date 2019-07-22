@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trigger</title>
+    <link rel="stylesheet" href="trigger.css">
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <div><span>0</span>button 1 clicks</div>
+    <div><span>0</span>button 2 clicks</div>
+
+    <script>
+        var n1 = 0;
+        var n2 = 0;
+        $("button:first").on("click", function () {
+            $("span:first").text(++n1);
+        });
+        $("button:last").on("click", function () {
+            $("button:first").trigger('click');
+            $("span:last").text(++n2);
+        });
+
+    </script>
+</body>
+</html>
