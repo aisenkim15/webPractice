@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            overflow: hidden;
+            background-image: url(flower.jpg);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 120%;
+        }
+    </style>
+    <script src="../jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+
+<script>
+    $("body").on("mousemove", function (e) {
+        var bgX = ($(window).width() / 2 - e.pageX)/20 - $(window).width()*0.1;
+        var bgY = ($(window).height() / 2 - e.pageY)/20 - $(window).height()*0.1;
+        var bgPos = bgX + "px " + bgY + "px";
+        $(this).css({backgroundPosition: bgPos})
+    })
+
+</script>
+</body>
+</html>

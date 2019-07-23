@@ -34,9 +34,9 @@ gulp.task('vendor-copy-src', function () {
   .pipe(gulp.dest('./dist/vendor'));
 });
 
-gulp.task('images-copy-src', function () {
-  gulp.src('./src/images/*')
-  .pipe(gulp.dest('./dist/images'));
+gulp.task('나비-copy-src', function () {
+  gulp.src('./src/나비/*')
+  .pipe(gulp.dest('./dist/나비'));
 });
 
 gulp.task('docs-copy-src', function () {

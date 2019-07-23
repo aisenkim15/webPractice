@@ -26,12 +26,12 @@
 			overlayOpacity:			0.8,		// (integer) Opacity value to overlay; inform: 0.X. Where X are number from 0 to 9
 			// Configuration related to navigation
 			fixedNavigation:		false,		// (boolean) Boolean that informs if the navigation (next and prev button) will be fixed or not in the interface.
-			// Configuration related to images
-			imageLoading:			'images/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
-			imageBtnPrev:			'images/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
-			imageBtnNext:			'images/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
-			imageBtnClose:			'images/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
-			imageBlank:				'images/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
+			// Configuration related to 나비
+			imageLoading:			'나비/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
+			imageBtnPrev:			'나비/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
+			imageBtnNext:			'나비/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
+			imageBtnClose:			'나비/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
+			imageBlank:				'나비/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
 			// Configuration related to container image box
 			containerBorderSize:	10,			// (integer) If you adjust the padding in the CSS for the container, #lightbox-container-image-box, you will need to update this value
 			containerResizeSpeed:	400,		// (integer) Specify the resize duration of container image. These number are miliseconds. 400 is default.
@@ -42,7 +42,7 @@
 			keyToClose:				'c',		// (string) (c = close) Letter to close the jQuery lightBox interface. Beyond this letter, the letter X and the SCAPE key is used to.
 			keyToPrev:				'p',		// (string) (p = previous) Letter to show the previous image
 			keyToNext:				'n',		// (string) (n = next) Letter to show the next image.
-			// Don�t alter these variables in any way
+			// Don�t alter these variables in any way
 			imageArray:				[],
 			activeImage:			0
 		},settings);
@@ -68,15 +68,15 @@
 			$('embed, object, select').css({ 'visibility' : 'hidden' });
 			// Call the function to create the markup structure; style some elements; assign events in some elements.
 			_set_interface();
-			// Unset total images in imageArray
+			// Unset total 나비 in imageArray
 			settings.imageArray.length = 0;
 			// Unset image active information
 			settings.activeImage = 0;
-			// We have an image set? Or just an image? Let�s see it.
+			// We have an image set? Or just an image? Let�s see it.
 			if ( jQueryMatchedObj.length == 1 ) {
 				settings.imageArray.push(new Array(objClicked.getAttribute('href'),objClicked.getAttribute('title')));
 			} else {
-				// Add an Array (as many as we have), with href and title atributes, inside the Array that storage the images references		
+				// Add an Array (as many as we have), with href and title atributes, inside the Array that storage the 나비 references
 				for ( var i = 0; i < jQueryMatchedObj.length; i++ ) {
 					settings.imageArray.push(new Array(jQueryMatchedObj[i].getAttribute('href'),jQueryMatchedObj[i].getAttribute('title')));
 				}
@@ -102,7 +102,7 @@
 						</div>
 						<div id="lightbox-loading">
 							<a href="#" id="lightbox-loading-link">
-								<img src="../images/lightbox-ico-loading.gif">
+								<img src="../나비/lightbox-ico-loading.gif">
 							</a>
 						</div>
 					</div>
@@ -115,7 +115,7 @@
 						</div>
 						<div id="lightbox-secNav">
 							<a href="#" id="lightbox-secNav-btnClose">
-								<img src="../images/lightbox-btn-close.gif">
+								<img src="../나비/lightbox-btn-close.gif">
 							</a>
 						</div>
 					</div>
@@ -170,7 +170,7 @@
 			});
 		}
 		/**
-		 * Prepares image exibition; doing a image�s preloader to calculate it�s size
+		 * Prepares image exibition; doing a image�s preloader to calculate it�s size
 		 *
 		 */
 		function _set_image_to_view() { // show the loading
@@ -196,16 +196,16 @@
 		/**
 		 * Perfomance an effect in the image container resizing it
 		 *
-		 * @param integer intImageWidth The image�s width that will be showed
-		 * @param integer intImageHeight The image�s height that will be showed
+		 * @param integer intImageWidth The image�s width that will be showed
+		 * @param integer intImageHeight The image�s height that will be showed
 		 */
 		function _resize_container_image_box(intImageWidth,intImageHeight) {
 			// Get current width and height
 			var intCurrentWidth = $('#lightbox-container-image-box').width();
 			var intCurrentHeight = $('#lightbox-container-image-box').height();
 			// Get the width and height of the selected image plus the padding
-			var intWidth = (intImageWidth + (settings.containerBorderSize * 2)); // Plus the image�s width and the left and right padding value
-			var intHeight = (intImageHeight + (settings.containerBorderSize * 2)); // Plus the image�s height and the left and right padding value
+			var intWidth = (intImageWidth + (settings.containerBorderSize * 2)); // Plus the image�s width and the left and right padding value
+			var intHeight = (intImageHeight + (settings.containerBorderSize * 2)); // Plus the image�s height and the left and right padding value
 			// Diferences
 			var intDiffW = intCurrentWidth - intWidth;
 			var intDiffH = intCurrentHeight - intHeight;
@@ -255,7 +255,7 @@
 		function _set_navigation() {
 			$('#lightbox-nav').show();
 
-			// Instead to define this configuration in CSS file, we define here. And it�s need to IE. Just.
+			// Instead to define this configuration in CSS file, we define here. And it�s need to IE. Just.
 			$('#lightbox-nav-btnPrev,#lightbox-nav-btnNext').css({ 'background' : 'transparent url(' + settings.imageBlank + ') no-repeat' });
 			
 			// Show the prev button, if not the first image in set
@@ -269,7 +269,7 @@
 							return false;
 						});
 				} else {
-					// Show the images button for Next buttons
+					// Show the 나비 button for Next buttons
 					$('#lightbox-nav-btnPrev').unbind().hover(function() {
 						$(this).css({ 'background' : 'url(' + settings.imageBtnPrev + ') left 15% no-repeat' });
 					},function() {
@@ -293,7 +293,7 @@
 							return false;
 						});
 				} else {
-					// Show the images button for Next buttons
+					// Show the 나비 button for Next buttons
 					$('#lightbox-nav-btnNext').unbind().hover(function() {
 						$(this).css({ 'background' : 'url(' + settings.imageBtnNext + ') right 15% no-repeat' });
 					},function() {
@@ -346,7 +346,7 @@
 			}
 			// Verify the key to show the previous image
 			if ( ( key == settings.keyToPrev ) || ( keycode == 37 ) ) {
-				// If we�re not showing the first image, call the previous
+				// If we�re not showing the first image, call the previous
 				if ( settings.activeImage != 0 ) {
 					settings.activeImage = settings.activeImage - 1;
 					_set_image_to_view();
@@ -355,7 +355,7 @@
 			}
 			// Verify the key to show the next image
 			if ( ( key == settings.keyToNext ) || ( keycode == 39 ) ) {
-				// If we�re not showing the last image, call the next
+				// If we�re not showing the last image, call the next
 				if ( settings.activeImage != ( settings.imageArray.length - 1 ) ) {
 					settings.activeImage = settings.activeImage + 1;
 					_set_image_to_view();
@@ -364,7 +364,7 @@
 			}
 		}
 		/**
-		 * Preload prev and next images being showed
+		 * Preload prev and next 나비 being showed
 		 *
 		 */
 		function _preload_neighbor_images() {

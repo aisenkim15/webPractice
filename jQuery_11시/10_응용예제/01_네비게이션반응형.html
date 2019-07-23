@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>네비게이션 반응형</title>
     <meta name="viewport" content="width=device-width">
+    <script src="jquery-3.4.1.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -14,6 +15,9 @@
             padding: 20px 0;
             text-align: center;
             font-size: 20px;
+        }
+        li{
+            list-style: none;
         }
 
         @media all and (min-width: 700px) {
@@ -69,41 +73,69 @@
     </style>
 </head>
 <body>
+<h1>해상도에 따른 제이쿼리 효과</h1>
 <nav id="gnb">
     <ul>
         <li>
-            <a href="#">Menu1</a>
+            <a href="#">메뉴1</a>
             <ul class="snb">
-                <li><a href="#">Menu1</a></li>
-                <li><a href="#">Menu2</a></li>
-                <li><a href="#">Menu3</a></li>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
             </ul>
         </li>
         <li>
-            <a href="#">Menu2</a>
+            <a href="#">메뉴2</a>
             <ul class="snb">
-                <li><a href="#">Menu1</a></li>
-                <li><a href="#">Menu2</a></li>
-                <li><a href="#">Menu3</a></li>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
             </ul>
         </li>
         <li>
-            <a href="#">Menu3</a>
+            <a href="#">메뉴3</a>
             <ul class="snb">
-                <li><a href="#">Menu1</a></li>
-                <li><a href="#">Menu2</a></li>
-                <li><a href="#">Menu3</a></li>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
             </ul>
         </li>
         <li>
-            <a href="#">Menu4</a>
+            <a href="#">메뉴4</a>
             <ul class="snb">
-                <li><a href="#">Menu1</a></li>
-                <li><a href="#">Menu2</a></li>
-                <li><a href="#">Menu3</a></li>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
             </ul>
         </li>
     </ul>
 </nav>
+<script>
+    $(".snb").hide();
+    function resizing() {
+        if (  $(window).width() >= 700   ) {
+            $("#gnb .nav2 > li").off();
+            $("#gnb > ul").removeClass().addClass("nav1");
+            $("#gnb li").on("mouseenter", function() {
+                $(this).children(".snb").slideDown(200);
+            }).on("mouseleave", function() {
+                $(this).children(".snb").stop().slideUp(200);
+            });
+        } else {
+            $("#gnb > ul").removeClass().addClass("nav2");
+            $("#gnb .nav1 > li").off();
+            $("#gnb li").on("mouseenter", function() {
+                $(this).children(".snb").show();
+            }).on("mouseleave", function() {
+                $(this).children(".snb").hide();
+            });
+        }
+    }
+    resizing();
+
+    $(window).resize(function() {
+        resizing();
+    });
+</script>
 </body>
 </html>
