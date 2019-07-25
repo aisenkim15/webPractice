@@ -10,7 +10,7 @@ a{
     text-decoration: none;
 }
 
-#sliderWrap{overflow: scroll; height: 100%;}
+#sliderWrap{overflow: hidden; height: 100%;}
 #sliderList{overflow: hidden; width: 300%; height: 100%}
 #sliderList li{width: 33.3333%; height: 100%; float: left; background: no-repeat center center / cover;}
 #sliderList .slider1{background-image: url("../images/pix1.jpg")}
