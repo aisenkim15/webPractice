@@ -59,3 +59,8 @@ a {
 #btn .rightBtn{right: 50px;}
 #btn .leftBtn{left: 50px;}
 
+#btnNum { position: absolute; bottom: 50px; left: calc(50% - 75px); z-index: 9999;  }
+#btnNum a { display: block; width: 30px; height: 30px;
+    float: left; margin: 0 10px;
+    background: #000; color: #fff;
+    text-align: center; line-height: 30px; }
